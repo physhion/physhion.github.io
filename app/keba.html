@@ -100,8 +100,8 @@
   <label for="default_check">デフォルトの句を含める</label><br>
     <input type="checkbox" id="QK_check"/>
   <label for="QK_check">QuizKnock動画既出の句を含める</label><br>
-  <input type="checkbox" id="your_check" disabled />
-  <label for="your_check">あなたの追加した句を含める（未実装）</label><br>
+  <input type="checkbox" id="your_check"/>
+  <label for="your_check">あなたの追加した句を含める（下記参照）</label><br>
   <br>
   <input type="checkbox" id="deny" />
   <label for="deny">上の句を否定する</label><br>
@@ -112,7 +112,7 @@
 <details>
 <summary class="title"><h2>▼あなたの句を追加するときの注意点</h2></summary>
 <p>
-<font color="red">暫定的な記述：開発者ツールのコンソールからyours.push('追加する文');を実行することで句を追加できます。</font><br>
+<font color="red">暫定的な記述：開発者ツールのコンソールからyours.push('追加する文');を実行することで句を追加できます。そのうちなんとかします。</font><br>
 「深淵を覗く」はOKですが、「深淵を覗かれる」などの受け身文は、文章が壊れる可能性があります。<br>
 具体的には、左の句かつ否定オプションをオンにしている場合に起きます。<br>
 これはプログラム上で語末の「る」を削って「れば」「らなければ」に置換しているために、<br>
