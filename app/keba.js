@@ -61,7 +61,7 @@ function wordoptions_receive(){
 
     error_reload = false;
 
-    if(wordoptions[0] == false && wordoptions[1] == false){
+    if(wordoptions[0] == false && wordoptions[1] == false && (wordoptions[2] == false || yours.length == 0)){
         error_reload = true;
         return;
     }
@@ -264,7 +264,7 @@ function rightcore(){
         }else if(rightoptions == "right_all"){
             rightbox = rightbox.concat(QK_nv,QK_v);
         }
-        
+
     }
 
     if(wordoptions[2] == true){
