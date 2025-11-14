@@ -67,7 +67,6 @@ function wordoptions_receive(){
 
 }
 
-
 function text_act(){
 
     if(error_u == true){
