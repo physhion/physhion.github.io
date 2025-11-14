@@ -2,19 +2,126 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>無限「けば」マシーン</title>
+  <title>無限風が吹けばマシーン</title>
 </head>
 
-<script>
+<style>
+  body{
+    background-color: #e0fff3;
+    color: black;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
 
-</script>
+  .centre{
+    display: block;
+    width: 80%;
+    margin: 0 10%;
+    padding: 0;
+  }
+
+  .title{
+    margin-bottom: -10px;
+    display: block;
+    text-align: left;
+  }
+
+  fieldset{
+    width:420px;
+    text-align: left;
+
+  }
+
+  p{
+    font-size: 12px;
+    display: block;
+    text-align: left;
+  }
+
+  .main{
+    background: azure;
+    margin: 10px 10%;
+    padding: 10px 0;
+    border: double 3px blue;
+  }
+
+  .stage{
+    color: green;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  .credit{
+    font-size: 10px;
+    text-align: center;
+  }
+
+
+</style>
+
+<script src="keba.js" defer></script>
 
 <body>
 
-<h1>無限風が吹けばマシンへようこそ♡</h1>
+<div class="centre">
+<h1 class="title">無限風が吹けばマシンへようこそ♡</h1>
 <p>無限「風が吹けば桶屋が儲かるゲーム」お題出力マシーン、略して無限風が吹けばマシンです。</p>
 
-<h2>「風が吹けば桶屋が儲かるゲーム」とは？</h2>
+<br>
+
+<div class="main"> 
+<h2 class="stage"><span id="front">風が吹けば</span><span id="back">桶屋が儲かる</span></h2>
+<button type="button" id="left_button">左の句を再抽選</button>
+<button type="button" id="all_button">全混ぜ！</button>
+<button type="button" id="right_button">右の句を再抽選</button>
+</div>
+
+<br>
+
+<fieldset>
+  <legend>設定</legend>
+  <input type="radio" id="left_nv" name="options_l" value="left_nv" checked />
+  <label for="left_nv">左の句を無意志動詞のみにする（風が吹けば…など）</label><br>
+  <input type="radio" id="left_v" name="options_l" value="left_v"/>
+  <label for="left_v">左の句を意志動詞のみにする（息を吹けば…など）</label><br>
+  <input type="radio" id="left_all" name="options_l" value="left_all"/>
+  <label for="left_all">左の句をどちらも</label><br>
+  <br>
+  <input type="radio" id="right_nv" name="options_r" value="right_nv" checked/>
+  <label for="right_nv">右の句を無意志動詞のみにする</label><br>
+  <input type="radio" id="right_v" name="options_r" value="right_v"/>
+  <label for="right_v">右の句を意志動詞のみにする（非推奨）</label><br>
+  <input type="radio" id="right_all" name="options_r" value="right_all"/>
+  <label for="right_all">右の句をどちらも（非推奨）</label><br>
+  <br>
+  <input type="checkbox" id="default_check" checked />
+  <label for="default_check">デフォルトの句を含める</label><br>
+    <input type="checkbox" id="QK_check"/>
+  <label for="QK_check">QuizKnock動画既出の句を含める</label><br>
+  <input type="checkbox" id="your_check" disabled />
+  <label for="your_check">あなたの追加した句を含める（未実装）</label><br>
+  <br>
+  <input type="checkbox" id="deny" />
+  <label for="deny">上の句を否定する</label><br>
+</fieldset>
+
+<br>
+
+<details>
+<summary class="title"><h2>▼あなたの句を追加するときの注意点</h2></summary>
+<p>
+「深淵を覗く」はOKですが、「深淵を覗かれる」などの受け身文は、文章が壊れる可能性があります。<br>
+具体的には、左の句かつ否定オプションをオンにしている場合に起きます。<br>
+これはプログラム上で語末の「る」を削って「れば」「らなければ」に置換しているために、<br>
+「深淵を覗かれる」は「深淵を覗かれらなければ」になってしまうのですね。<br>
+壊れてもいいよ、というかたはそのままどうぞ♨<br>
+</p>
+</details>
+
+<details>
+<summary class="title"><h2>▼「風が吹けば桶屋が儲かるゲーム」とは？</h2></summary>
 <p>
 風が吹く→<br>
 土ぼこりが目に入り、目が見えなくなる人が増える→<br>
@@ -30,10 +137,22 @@
 とするのが、「風が吹けば桶屋が儲かるゲーム」です。<br>
 <br>
 QuizKnock様の動画を参考に作成しています。こちらからどうぞ↓<br>
-本編：	https://youtu.be/8ZSg417t7z4?si=UtRF-9Zm2t7uMWLa<br>
-サブch：	https://youtu.be/KOZj8zrFfPo?si=jmqqW1_q_4RbsIa1<br>
+本編：	<a href="https://youtu.be/8ZSg417t7z4?si=UtRF-9Zm2t7uMWLa" target="_blank" rel="noopener noreferrer">https://youtu.be/8ZSg417t7z4</a><br>
+サブch：	<a href="https://youtu.be/KOZj8zrFfPo?si=jmqqW1_q_4RbsIa1" target="_blank" rel="noopener noreferrer">https://youtu.be/KOZj8zrFfPo</p></a>
 </p>
+</details>
+</div>
 
+<br>
+<hr>
+<br>
+<div class="credit">再始音企画,miha-lay 2025
+<a href="index.html">戻ります</a>
+</div>
+<br>
+<br>
 
 </body>
+
+
 </html>
