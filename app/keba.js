@@ -7,6 +7,7 @@ let default_v = ['息を吹く','黒たまごを食べる','プラナリアを�
     '深淵を覗く','ドレスを着る','平穏な午後を過ごす','孤独の怖さを知る','時を戻す','南極に行く','石を焼く','嘘をつく','背筋を伸ばす','花火をする','星に祈る',
     '山を焼く','亀を助ける'
 ];
+let yours = [];
 
 let ooo = [['えば','けば','せば','てば','ねば','めば','れば','げば','べば','来れば','すれば'],
 ['わなければ','かなければ','さなければ','たなければ','ななければ','まなければ','らなければ','がなければ','ばなければ','来なければ','しなければ']];
@@ -138,6 +139,11 @@ function leftcore(){
         }else if(leftoptions == "left_all"){
             leftbox = leftbox.concat(QK_nv,QK_v);
         }
+        
+    }
+
+    if(wordoptions[2] == true){
+        leftbox = leftbox.concat(yours);
     }
 
     do{
@@ -258,6 +264,11 @@ function rightcore(){
         }else if(rightoptions == "right_all"){
             rightbox = rightbox.concat(QK_nv,QK_v);
         }
+        
+    }
+
+    if(wordoptions[2] == true){
+        rightbox = rightbox.concat(yours);
     }
 
     do{
