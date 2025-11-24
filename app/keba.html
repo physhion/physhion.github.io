@@ -28,10 +28,15 @@
     text-align: left;
   }
 
+  .middle{
+    display:block;
+  }
+
   fieldset{
     width:420px;
+    display: inline-block;
     text-align: left;
-
+    vertical-align: top;
   }
 
   p{
@@ -58,6 +63,9 @@
     text-align: center;
   }
 
+  .red{
+    color :red;
+  }
 
 </style>
 
@@ -79,6 +87,8 @@
 </div>
 
 <br>
+
+<div class="middle"> 
 
 <fieldset>
   <legend>設定</legend>
@@ -103,22 +113,37 @@
   <input type="checkbox" id="your_check"/>
   <label for="your_check">あなたの追加した句を含める（下記参照）</label><br>
   <br>
+  <input type="checkbox" id="k_only" />
+  <label for="k_only">上の句を「けば」のみにする</label><br>
   <input type="checkbox" id="deny" />
   <label for="deny">上の句を否定する</label><br>
 </fieldset>
 
+<fieldset>
+  <legend>あなたの句を追加する</legend>
+  <input type="text" id="you_wrote" placeholder="句を入力">
+  <button type="button" id="you_button">発射</button>
+  <p>あなたの追加した句↓<span class="red" id="you_error"></span></p>
+  <div id="you_show"></div>
+</fieldset>
+
+</div>
+
 <br>
 
 <details>
-<summary class="title"><h2>▼あなたの句を追加するときの注意点</h2></summary>
+<summary class="title"><h2>▼ あなたの句を追加するときの注意点</h2></summary>
 <p>
-<font color="red">暫定的な記述：開発者ツールのコンソールから  yours.push('追加する文'); を実行することで句を追加できます。そのうちなんとかします。</font><br>
-要素2つだとシステム上前後が入れ替わりません。3つ以上入れて楽しくしましょう。<br>
-「深淵を覗く」はOKですが、「深淵を覗かれる」などの受け身文は、文章が壊れる可能性があります。<br>
-具体的には、左の句かつ否定オプションをオンにしている場合に起きます。<br>
-これはプログラム上で語末の「る」を削って「れば」「らなければ」に置換しているために、<br>
-「深淵を覗かれる」は「深淵を覗かれらなければ」になってしまうのですね。<br>
-壊れてもいいよ、というかたはそのままどうぞ♨<br>
+句は<b>断定の形</b>で書いてください。「風が吹く」「桶屋が儲かる」などの<b>ウ段の音で終わる形</b>です。<br>
+「くる」「～やってくる」「する」「〇〇する」などで終わる場合、それぞれ<b>「来る」「する」で記述する</b>ようにしてください。<br>
+左の句の「けば」変換は、表記が正しかったら自動でやってくれます。正しくなかったら左の句に来たときにエラーが出ます。<br>
+条件に該当する句が2種類までしか無いとエラーが出ます。常に3種類以上存在するようにしてください。<br>
+これは「左の句と右の句が被らない」「今の句と前の句が被らない」プログラムが組まれているからです。<br>
+<br>
+書く場所がないのでここに書くんですけど、句の最後の文字が「る」である場合、<br>
+句を否定するとき「上がる→上がらなければ」「壊れる→壊れなければ」のように、<br>
+「らなければ」「なければ」の2つのパターンがあることに気づきました。<br>
+作成者の日本語への理解が足りず、対応できないのでこの異常は放置されます。すみません。<br>
 </p>
 </details>
 
@@ -137,6 +162,14 @@
 上の文章は、「風が吹けば桶屋が儲かる」ということわざが、なぜそうなるかを示したものです。<br>
 こんな説明でいいなら、どんな事柄をつなげてもその論理関係を説明できるのでは？<br>
 とするのが、「風が吹けば桶屋が儲かるゲーム」です。<br>
+<br>
+例えば「寿命が伸びればカーテンが上がる」だったら？<br>
+寿命が延びれば長い時間を生きることになる→<br>
+長い人生はそれだけで物語であり、日記や自伝が有名になる→<br>
+物語はどのような形でも伝えられる。人の人生が戯曲になってもよい→<br>
+演劇は演じられる、やがて遠い未来にも演劇のカーテンが上がる<br>
+<br>
+……時には無理な論理も通しながら、自由に遊びましょう。スマートな説明を目指してね。<br>
 <br>
 QuizKnock様の動画を参考に作成しています。こちらからどうぞ↓<br>
 本編：	<a href="https://youtu.be/8ZSg417t7z4?si=UtRF-9Zm2t7uMWLa" target="_blank" rel="noopener noreferrer">https://youtu.be/8ZSg417t7z4</a><br>
