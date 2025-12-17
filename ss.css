@@ -1,0 +1,69 @@
+body{
+    /* background-color: white; */
+    /* color: black; */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+/* credit以外はcentreでくくる */
+.centre{
+    display: block;
+    width: 80%;
+    margin: 0 10%;
+    padding: 0;
+}
+
+.title{
+    margin-bottom: -10px;
+    display: block;
+    text-align: left;
+}
+
+
+p{
+    font-size: 12px;
+    display: block;
+    text-align: left;
+}
+
+/* stageは枠線、mainでくくる */
+.main{
+    /* background: azure; */
+    /* border: double 3px blue; */
+    margin: 10px 10%;
+    padding: 10px 0;
+}
+
+.stage{
+    /* color: green; */
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+/* fieldblocksはウィンドウサイズ可変ブロック、middleでくくるのは必要ないんだけど、一応ね */
+.middle{
+    display:block;
+}
+
+.fieldblocks{
+    width:420px;
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+}
+
+.credit{
+    font-size: 10px;
+    text-align: center;
+}
+
+/* 文字色共 */
+.red{
+    color :red;
+}
+
+.white{
+    color: white;
+}
