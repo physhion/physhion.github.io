@@ -32,6 +32,8 @@ let text_back_legacy = "桶屋が儲かる";
 let frontdomains = document.getElementById('front');
 let backdomains = document.getElementById('back');
 
+let you_error = document.getElementById('you_error');
+
 document.getElementById('left_button').addEventListener('click', left);
 document.getElementById('all_button').addEventListener('click', all);
 document.getElementById('right_button').addEventListener('click', right);
@@ -47,8 +49,7 @@ function textbox_enter_act(pressed){
 function you_f(){
     let you_wrote = document.getElementById('you_wrote');
     let you_value = you_wrote.value;
-    let you_error = document.getElementById('you_error');
-
+    
     you_value = you_value.replace(/\s+/g, "");
     you_wrote.value = you_value;
 
@@ -64,19 +65,34 @@ function you_f(){
         }
     }
 
+
     let you_gobi = you_value.substring(you_value.length-1);
     for(let i=0; i < 9; i++){
         if(you_gobi == ooo[0][i]){
-            you_error.textContent = ""; 
             yours.push(you_value);
-            let you_show = document.getElementById('you_show');
-            you_show.textContent = yours;
+            you_showings();
+            you_error.textContent = ""; 
             return;
         }
     }
     
     you_error.textContent = "エラー発生…　語末がウ段の音で終わらないようです"; 
 
+}
+
+function you_delete(you_num){
+    let you_delete_items = yours.splice(you_num,1);
+    you_showings();
+    you_error.textContent = "要素\""+you_delete_items+"\"を削除しました。";
+}
+
+function you_showings(){
+    let you_show = document.getElementById('you_show');
+    let you_delete_button = "";
+    for(let i2=0; i2 < yours.length; i2++){
+        you_delete_button += "<input type=\"button\" onclick=\"you_delete("+i2+")\" value=\""+yours[i2]+"\">";
+    }
+    you_show.innerHTML = you_delete_button;
 }
 
 function wordoptions_receive(){
@@ -257,7 +273,6 @@ function leftcore(){
     error_u = true;
 
 }
-
 
 function rightcore(){
         
