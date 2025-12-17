@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>無限風が吹けばマシーン</title>
 </head>
-
+<link rel="stylesheet" href="../ss.css">
 <style>
   body{
     background-color: #e0fff3;
@@ -15,56 +15,13 @@
     display: block;
   }
 
-  .centre{
-    display: block;
-    width: 80%;
-    margin: 0 10%;
-    padding: 0;
-  }
-
-  .title{
-    margin-bottom: -10px;
-    display: block;
-    text-align: left;
-  }
-
-  .middle{
-    display:block;
-  }
-
-  fieldset{
-    width:420px;
-    display: inline-block;
-    text-align: left;
-    vertical-align: top;
-  }
-
-  p{
-    font-size: 12px;
-    display: block;
-    text-align: left;
-  }
-
   .main{
     background: azure;
-    margin: 10px 10%;
-    padding: 10px 0;
     border: double 3px blue;
   }
-
+  
   .stage{
     color: green;
-    margin-top: 5px;
-    margin-bottom: 10px;
-  }
-
-  .credit{
-    font-size: 10px;
-    text-align: center;
-  }
-
-  .red{
-    color :red;
   }
 
 </style>
@@ -90,7 +47,7 @@
 
 <div class="middle"> 
 
-<fieldset>
+<fieldset class="fieldblocks">
   <legend>設定</legend>
   <input type="radio" id="left_nv" name="options_l" value="left_nv" checked />
   <label for="left_nv">左の句を無意志動詞のみにする（風が吹けば…など）</label><br>
@@ -119,7 +76,7 @@
   <label for="deny">上の句を否定する</label><br>
 </fieldset>
 
-<fieldset>
+<fieldset class="fieldblocks">
   <legend>あなたの句を追加する</legend>
   <input type="text" id="you_wrote" placeholder="句を入力">
   <button type="button" id="you_button">発射</button>
